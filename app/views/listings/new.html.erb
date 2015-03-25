@@ -1,0 +1,19 @@
+<p>
+  Add Listing
+</p>
+
+<h2>Log in</h2>
+
+<%= form_for @listing do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <%= f.label :date_available %>
+  <%= f.date_field :date_available %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.submit "Add Listing"  %>
+<% end %>

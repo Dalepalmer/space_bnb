@@ -5,4 +5,8 @@ describe "the homepage" do
     visit "/"
     expect(page).to have_content 'Welcome'
   end
+  it "home page has listings" do
+    visit "/"
+    expect(page).to have_content 'Listings'
+  end
 end

@@ -5,7 +5,12 @@ describe "the sign out a user process" do
     user = FactoryGirl.create(:user)
     visit "/"
     click_on "Log out"
-    save_and_open_page
-    expect(page).to have_content "Goodbye"
+    expect(page).to have_content "Signed out"
+  end
+  it "confirms a user has logged out" do
+    visit "/"
+    click_on "Log out"
+    click_on "Log in"
+    expect(page). to have_content "Log in"
   end
 end
