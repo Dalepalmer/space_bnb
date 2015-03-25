@@ -12,7 +12,7 @@
   <%= f.label :price %>
   <%= f.text_field :price %>
   <%= f.label :date_available %>
-  <%= f.date_field :date_available %>
+  <%= f.date_field :date_available, value: Date.today %>
   <%= f.label :location %>
   <%= f.text_field :location %>
   <%= f.submit "Add Listing"  %>
