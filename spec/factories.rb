@@ -1,7 +1,7 @@
-# FactoryGirl.define do
-#   factory(:user) do
-#     email('bob@bob.com')
-#     password('password123')
-#     password_confirmation('password123')
-#   end
-# end
+FactoryGirl.define do
+  factory(:user) do
+    email('bob@bob.com')
+    password('11111111')
+    password_confirmation('11111111')
+  end
+end
