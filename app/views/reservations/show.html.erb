@@ -1,0 +1,8 @@
+<%= @reservation.listing %>
+<%= listing %>
+<% if @reservations.any? do |reservation| %>
+<ul>
+  <li><%= reservation.user_id %></li>
+  <% end %>
+  </ul>
+    <% end %>

@@ -2,6 +2,7 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.all
+    
   end
 
   def new
@@ -9,15 +10,16 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @listing = Listing.find(params[:id])
-    @reservation = Reservation.new
+    @reservation = Reservation.find(params[:id])
+    @reservations = Reservation.all
+    @user = User.find(@reservation.user_id)
   end
 
   def create
     @reservation = current_user.reservations.new(reservation_params)
     if @reservation.save
       flash[:notice] = "Reservation made!"
-      redirect_to new_reservation_path(@reservation)
+      redirect_to reservation_path({ id: @reservation.id })
     else
       render :new
     end
@@ -25,6 +27,6 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:reservation).permit(:user_id, :listing_id, listing: [:date_available])
+    params.require(:reservation).permit(:user_id, :listing_id, listing: [:date_available, :listing_id])
   end
 end
