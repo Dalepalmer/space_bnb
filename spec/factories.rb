@@ -12,4 +12,9 @@ FactoryGirl.define do
     location('Austin, Texas')
     user_id(1)
   end
+  factory(:test_user, class: User) do
+    email('bill@bill.com')
+    password('password')
+    password_confirmation('password')
+  end
 end

@@ -1,14 +1,13 @@
 require "rails_helper"
 
 describe "the add a listing process" do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:test_user) { FactoryGirl.create(:test_user) }
 
   before do
-    sign_in(user)
+    sign_in(test_user)
   end
 
   it "adds a new listing" do
-    user = FactoryGirl.create(:user)
     visit new_listing_path
     fill_in "Title", with: 'test title'
     fill_in "Description", with: 'bs'
