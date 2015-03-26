@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :listings
+  has_many :reservations
   validates :email, :presence => true
   validates :password, :presence => true
   validates :password_confirmation, :presence => true
