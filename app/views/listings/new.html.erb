@@ -3,7 +3,7 @@
 </p>
 
 <h2>Log in</h2>
-
+<%=render 'layouts/errors', object: @listing %>
 <%= form_for @listing do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>

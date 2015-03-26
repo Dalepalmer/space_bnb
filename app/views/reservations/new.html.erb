@@ -1,0 +1,14 @@
+<%=render 'layouts/errors', object: @reservation %>
+
+
+
+<p>
+  Make Reservation
+</p>
+
+
+<%= form_for [@listing, @reservation] do |f| %>
+  <%= f.label :date_available %>
+  <%= f.date_field :date_available, value: Date.today %>
+  <%= f.submit "Make reservation" %>
+<% end %>
